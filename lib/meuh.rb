@@ -18,6 +18,10 @@ module Meuh
       'http://www.radiomeuh.com/meuh/playlist/index.php'
     end
 
+    def user_agent
+      "Meuh/#{version} +github.com/bfontaine/meuh"
+    end
+
     # Get the text of an element. This is an helper for internal usage.
     def text(el)
       el.text.strip.gsub(/\r/, "\n")
@@ -42,7 +46,7 @@ module Meuh
       opts = opts[0] || {}
       tracks = { :previous => [], :current => nil, :next => [] }
 
-      doc = Nokogiri::HTML(open(url))
+      doc = Nokogiri::HTML(open(url, 'User-Agent' => user_agent))
 
       def parse_track t
         lines = t.inner_html.split(/<br\/?\s*>/).map do |l|
@@ -76,7 +80,7 @@ module Meuh
             tracks[:next] << parse_track(td)
           end
         else
-          tracks[:previous] << parse_track(td)
+          tracks[:previous] << parse_track(td) unless td.text =~ /\(jingle\)/i
         end
       end
 
