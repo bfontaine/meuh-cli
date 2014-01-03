@@ -21,14 +21,26 @@ Install it with `gem install win32console`.
 From the command-line:
 
 ```
-$ meuh [--no-color]
+$ meuh [--no-format]
 ```
 
 That's it!
 
 ## Example
 
-TODO
+```
+$ meuh
+Mauvaise Mine (Lafayette - Mauvaise Mine (Jupiter remix))
+
+Previously:
+* [15:44:21] Tsugi 30 LCD Soundsystem Small Wave (Dolle Jolle - Balearic Incarnation (Todd Terje's Extra Doll Mx))
+* [15:37:31] Booker T & the MGs (Green Onions (Luke Danfields Bluehouse Edit))
+* [15:33:42] Patchworks Remix Book (Mr Day - Small Fry ( Patchworks Disco mix) - Mr Day)
+* [15:28:11] Midnight Riot Volume 4 (Yambee - Blacker (Joey Negro remix))
+
+Next:
+* Psychic (Darkside - The Only Shrine I've Seen)
+```
 
 ## Tests
 
