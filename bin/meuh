@@ -15,7 +15,8 @@ where [options] are:
 EOS
 
   opt :version, 'Print the version and exit', :default => false
-  opt :no_format, 'Disable colored/underlined output', :default => false
+  opt :no_format, 'Disable colored/underlined output', :default => false,
+                                                       :short   => '-F'
 
 end
 
