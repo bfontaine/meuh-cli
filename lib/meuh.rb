@@ -11,7 +11,7 @@ module Meuh
   class << self
 
     def version
-      '0.0.1'
+      '0.1.0'
     end
 
     def url
