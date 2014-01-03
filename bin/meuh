@@ -1,0 +1,26 @@
+#! /usr/bin/env ruby
+# -*- coding: UTF-8 -*-
+
+require 'trollop'
+require 'meuh'
+
+opts = Trollop.options do
+  version "meuh #{Meuh.version}"
+  banner <<-EOS
+Meuh is a command-line tool to get the current played track at Anticafé.
+
+Usage:
+    meuh [options]
+where [options] are:
+EOS
+
+  opt :version, 'Print the version and exit', :default => false
+  opt :no_color, 'Disable colored output', :default => false, :short => :d
+
+end
+
+opts[:color] = !opts[:no_color]
+
+t = Meuh.tracks(opts)
+puts Meuh.format_results(t, opts[:color])
+
