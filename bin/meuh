@@ -15,11 +15,11 @@ where [options] are:
 EOS
 
   opt :version, 'Print the version and exit', :default => false
-  opt :no_color, 'Disable colored output', :default => false, :short => :d
+  opt :no_format, 'Disable colored/underlined output', :default => false
 
 end
 
-opts[:color] = !opts[:no_color]
+opts[:color] = !opts[:no_format]
 
 t = Meuh.tracks(opts)
 puts Meuh.format_results(t, opts[:color])
