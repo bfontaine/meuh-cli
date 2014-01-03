@@ -21,10 +21,10 @@ Install it with `gem install win32console`.
 From the command-line:
 
 ```
-$ meuh [--no-format]
+$ meuh
 ```
 
-That's it!
+That's it! Add `--no-format` if you don’t want the fancy formatting.
 
 ## Example
 
