@@ -19,7 +19,6 @@ module Meuh
           album    = t[:album]
           time     = style == :previous ? "[#{t[:time]}] " : ''
 
-          title.gsub!(/&amp;/, '&')
           title.strip!
 
           if color

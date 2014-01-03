@@ -45,7 +45,9 @@ module Meuh
       doc = Nokogiri::HTML(open(url))
 
       def parse_track t
-        lines = t.inner_html.split(/<br\/?\s*>/)
+        lines = t.inner_html.split(/<br\/?\s*>/).map do |l|
+          l.gsub(/&amp;/, '&')
+        end
 
         artist, title = lines[1].split(/\s+-\s+/, 2)
 
