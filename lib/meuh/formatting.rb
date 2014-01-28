@@ -14,10 +14,10 @@ module Meuh
         s = []
 
         def track_text(t, style, color) # :previous, :next, :curr
-          title    = t[:title] || ''
-          artist   = t[:artist]
-          album    = t[:album]
-          time     = style == :previous ? "[#{t[:time]}] " : ''
+          title  = t[:title] || ''
+          artist = t[:artist]
+          album  = t[:album]
+          time   = style == :previous ? "[#{t[:time]}] " : ''
 
           title.strip!
 
