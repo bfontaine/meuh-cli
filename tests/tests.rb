@@ -22,6 +22,12 @@ class MeuhTests < Test::Unit::TestCase
     assert(Meuh.version =~ /^\d+\.\d+\.\d+/)
   end
 
+  # == Meuh#user_agent == #
+
+  def test_meuh_ua
+    assert(Meuh.user_agent =~ /^Meuh\/\d+\.\d+\.\d+/)
+  end
+
 end
 
 
