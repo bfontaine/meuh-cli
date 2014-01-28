@@ -43,18 +43,24 @@ class Meuh_formatting_test < Test::Unit::TestCase
 
   def test_general_format_no_color
     r = /^.+\n\nPreviously:\n(?:\* \[.*?\] .*\n)+\nNext:\n\* .+/
-    assert_not_nil(Meuh::Formatting.text(@tracks, false) =~ r)
-    assert_not_nil(Meuh::Formatting.text(@tracks, true) =~ r)
+    assert_not_nil(Meuh.format_results(@tracks, false) =~ r)
+    assert_not_nil(Meuh.format_results(@tracks, true) =~ r)
   end
 
   def test_general_format_color
     r = /^.+\n\nPreviously:\n(?:\* \[.*?\] .*\n)+\nNext:\n\* .+/
-    assert_not_nil(Meuh::Formatting.text(@tracks, true) =~ r)
+    assert_not_nil(Meuh.format_results(@tracks, true) =~ r)
+  end
+
+  def test_general_format_color_with_curr_artist
+    @tracks[:current][:artist] = 'Someone'
+    r = /^.+\n\nPreviously:\n(?:\* \[.*?\] .*\n)+\nNext:\n\* .+/
+    assert_not_nil(Meuh.format_results(@tracks, true) =~ r)
   end
 
   def test_color_reset
-    assert_equal(nil, Meuh::Formatting.text(@tracks, false).index("\e[0m"))
-    assert_not_nil(Meuh::Formatting.text(@tracks, true).index "\e[0m")
+    assert_equal(nil, Meuh.format_results(@tracks, false).index("\e[0m"))
+    assert_not_nil(Meuh.format_results(@tracks, true).index "\e[0m")
   end
 
 end
