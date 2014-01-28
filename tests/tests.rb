@@ -76,6 +76,13 @@ class MeuhTests < Test::Unit::TestCase
     assert_equal(txt, Meuh.text(e))
   end
 
+  def test_meuh_text_wrong_element
+    assert_equal('', Meuh.text(nil))
+    assert_equal('', Meuh.text([]))
+    assert_equal('', Meuh.text({}))
+    assert_equal('', Meuh.text('foo'))
+  end
+
 end
 
 
