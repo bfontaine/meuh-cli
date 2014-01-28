@@ -42,11 +42,11 @@ module Meuh
     #   :remaining => "...", <-- remaining time
     #   :time => "..." <-- time for previous tracks
     # }
-    def tracks(*opts)
-      opts = opts[0] || {}
+    def tracks
       tracks = { :previous => [], :current => nil, :next => [] }
 
-      doc = Nokogiri::HTML(open(url, 'User-Agent' => user_agent))
+      html = open(url, 'User-Agent' => user_agent).read.encode!(Encoding::UTF_8)
+      doc = Nokogiri::HTML(html)
 
       def parse_track t
         lines = t.inner_html.split(/<br\/?\s*>/).map do |l|
@@ -60,12 +60,14 @@ module Meuh
           artist = nil
         end
 
+        time = lines[0].strip
+
         {
           :artist => artist,
           :album => lines[2].strip,
           :title => title,
           :remaining => t.css('font').text.gsub(/^:\s+/, ''),
-          :time => lines[0].strip
+          :time => time == '...' ? '' : time
         }
       end
 

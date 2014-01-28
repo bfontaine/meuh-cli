@@ -22,6 +22,6 @@ end
 
 opts[:color] = !opts[:no_format]
 
-t = Meuh.tracks(opts)
+t = Meuh.tracks
 puts Meuh.format_results(t, opts[:color])
 
