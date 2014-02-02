@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'coveralls', require: false
-gem 'nokogiri', '~> 1.5.9'
+gem 'nokogiri', '~> 1.6.1'
 gem 'trollop',  '~> 2.0'
 gem 'colored',  '~> 1.2'
 

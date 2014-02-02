@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/bfontaine/meuh-cli.png?branch=master)](https://travis-ci.org/bfontaine/meuh-cli)
 [![Gem Version](https://badge.fury.io/rb/meuh.png)](http://badge.fury.io/rb/meuh)
 [![Coverage Status](https://coveralls.io/repos/bfontaine/meuh-cli/badge.png)](https://coveralls.io/r/bfontaine/meuh-cli)
+[![Dependency Status](https://gemnasium.com/bfontaine/meuh-cli.png)](https://gemnasium.com/bfontaine/meuh-cli)
 
 **meuh** is a command-line tool to check the current radio track at
 [Anticafé][anticafe].
