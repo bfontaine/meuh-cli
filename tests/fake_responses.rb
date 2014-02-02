@@ -2,7 +2,7 @@
 
 require 'fakeweb'
 
-FakeWeb.allow_net_connect = false
+FakeWeb.allow_net_connect = %r[^https?://coveralls\.io]
 
 here = File.expand_path(File.dirname(__FILE__))
 

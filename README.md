@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/bfontaine/meuh-cli.png?branch=master)](https://travis-ci.org/bfontaine/meuh-cli)
 [![Gem Version](https://badge.fury.io/rb/meuh.png)](http://badge.fury.io/rb/meuh)
+[![Coverage Status](https://coveralls.io/repos/bfontaine/meuh-cli/badge.png)](https://coveralls.io/r/bfontaine/meuh-cli)
 
 **meuh** is a command-line tool to check the current radio track at
 [Anticafé][anticafe].
@@ -52,13 +53,4 @@ $ bundle install
 $ rake test
 ```
 
-Set the `COVERAGE` environment variable to activate the code
-coverage report, e.g.:
-
-```
-$ export COVERAGE=1; rake test
-```
-
-
-It’ll generate a `coverage/index.html`, which you can open in a
-Web browser.
+It’ll generate a `coverage/index.html`, which you can open in a Web browser.
